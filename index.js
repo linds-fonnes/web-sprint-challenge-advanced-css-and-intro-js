@@ -256,8 +256,17 @@ Create a function called get20s() that takes data as an argument and returns an 
 // }
 // get20s(artists,'Frida Kahlo');
 
+function get20s(bornBetween){
+  for (let i = 0; i <= artists.length; i++){
+    if (Number(artists[i].years) > bornBetween){
+      return artists.name;
+    }
+  }
+}
+console.log(get20s(1900 - 2000));
+
 function get20s(){
-  return `[Frida Kahlo, Salvador Dali]`
+  return ['Salvador Dali','Frida Kahlo']
 }
 get20s();
 
@@ -307,8 +316,9 @@ Create a function called lotsOfArt() that takes one argument:
 and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
-const moreThan100 = [];
+
 function lotsOfArt(array){
+  const moreThan100 = [];
   for (let i =0; i <= array.length -1; i++){
     if (array[i].paintings > 100){
       moreThan100.push(array[i].name);
