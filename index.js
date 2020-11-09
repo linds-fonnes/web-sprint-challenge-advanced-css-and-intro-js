@@ -256,19 +256,46 @@ Create a function called get20s() that takes data as an argument and returns an 
 // }
 // get20s(artists,'Frida Kahlo');
 
-function get20s(bornBetween){
-  for (let i = 0; i <= artists.length; i++){
-    if (Number(artists[i].years) > bornBetween){
-      return artists.name;
+// function get20s(array){
+//   let filteredArray = [];
+//   for (let i = 0; i <= array.length; i++){
+//     if (array[i].years >= ['1900-2000']){
+//       filteredArray.push(array[i].name);
+//     }
+//   }
+//   return filteredArray;
+// }
+// console.log(get20s(artists));
+
+// function get20s(){
+//   return ['Salvador Dali','Frida Kahlo']
+// }
+// get20s();
+// function get20s(array){
+// let filteredArray = [];
+// for (let i =0; i <=array.length; i++){
+//   let yearBorn = array[i]years.slice(0,4);
+// let yearDied = array[i]years.slice(-4);
+// yearBorn = parseInt(yearBorn);
+// yearDied = parseInt(yearDied);
+//   if(yearBorn >= 1900 && yearDied <= 2000){
+//     filteredArray.push(array[i].name);
+//   }
+// }
+// return filteredArray;
+// }
+
+// get20s(artists);
+function get20s(array){
+  const twentiesArtists = []
+  for(let i = 0; i < array.length; i++){
+    if(parseInt(array[i].years) > 1899){
+      twentiesArtists.push(array[i].name);
     }
   }
+  return twentiesArtists;
 }
-console.log(get20s(1900 - 2000));
-
-function get20s(){
-  return ['Salvador Dali','Frida Kahlo']
-}
-get20s();
+console.log(get20s(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called `removeArtist` that takes two arguments:
